@@ -6,18 +6,19 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="Views/css/bootstrap.css"/>
 </head>
 <body>
-
-<div>
+{% include "/header.twig" %}
+<div class="row">
     {% for pair in crypto %}
-        <div>{{ pair.getBaseCurrency()}}/{{ pair.getTargetCurrency()}}
+        <div class="card text-bg-primary" style="width: 10%">{{ pair.getBaseCurrency() }}/{{ pair.getTargetCurrency() }}
             <br>
-            Ratio:{{ pair.getRatio()}}
+            Ratio: {{ pair.getRatio() }}
 
         </div>
     {% endfor %}
 </div>
-
+<script src="Views/js/bootstrap.bundle.js"></script>
 </body>
 </html>
