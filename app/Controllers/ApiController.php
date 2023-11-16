@@ -5,7 +5,7 @@ use App\Models\CryptoPair;
 class ApiController
 
 {
-    public function index()
+    public function index():array
     {
         $cryptoPairs=[
             new CryptoPair("BTC","ETH"),
@@ -13,14 +13,8 @@ class ApiController
             new CryptoPair("BTC","ADA"),
         ];
 
-        [
-            "crypto"=>[
-                "base"=>$btcEth->getBaseCurrency(),
-                "target"=>$btcEth->getTargetCurrency(),
-                "ratio
-                "
-            ]
-
-        ]
+      return  [
+            "crypto"=>$cryptoPairs
+        ];
     }
 }
