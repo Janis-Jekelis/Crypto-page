@@ -4,7 +4,8 @@ require_once  __DIR__."/../vendor/autoload.php";
 use App\Controllers\MainController;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
-
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__."/../");
+$dotenv->load();
 $loader = new FilesystemLoader(__DIR__ . "/../public/Views");
 $twig = new Environment($loader);
 echo $twig->render("index.twig", (new MainController())->index());

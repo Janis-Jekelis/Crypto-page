@@ -2,6 +2,8 @@
 declare(strict_types=1);
 
 namespace App;
+
+
 class Api
 {
     private object $response;
@@ -14,7 +16,7 @@ class Api
         ];
         $headers = [
             'Accepts: application/json',
-            'X-CMC_PRO_API_KEY: 138efa86-2d3f-4de8-9ea4-a1ff9c10d2ec'
+            'X-CMC_PRO_API_KEY:'.$_ENV["API"]
         ];
         $qs = http_build_query($parameters);
         $request = "{$url}?{$qs}";

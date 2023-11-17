@@ -7,7 +7,7 @@ class MainController
 {
     public function index():array
     {
-        if($_GET["search"]==null) {
+        if(!isset($_GET["search"]) || $_GET["search"]==null) {
             $cryptoPairs = [
                 new CryptoPair("BTC", "ETH"),
                 new CryptoPair("BTC", "LTC"),

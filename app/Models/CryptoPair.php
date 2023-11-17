@@ -32,6 +32,7 @@ class CryptoPair
         foreach ($this->response->data as $currency){
             if($currency->symbol==$this->baseCurrency)$baseValue=$currency->quote->USD->price;
             if($currency->symbol==$this->targetCurrency)$targetValue=$currency->quote->USD->price;
+            if($baseValue!=0 && $targetValue!=0)break;
         }
         if($baseValue==0 || $targetValue==0){
             return null;
